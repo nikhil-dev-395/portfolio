@@ -17,36 +17,16 @@
         Frontend Development
       </h3>
       <ul class="flex flex-wrap gap-4">
-        <li class="text-sm px-3 py-2 inline-block rounded-md bg-[#10132E]">
-          HTML
+        <% skills.forEach(skill => { %>
+        <li class="text-sm px-3 py-2 inline-block rounded-md border">
+          <img
+            src="<%= skill.frontendSkillIcon %>"
+            alt="<%= skill.frontendSkillName %> icon"
+            class="inline-block mr-2 w-4 h-4"
+          />
+          <%= skill.frontendSkillName %>
         </li>
-        <li class="text-sm px-3 py-2 inline-block rounded-md bg-[#10132E]">
-          CSS
-        </li>
-        <li class="text-sm px-3 py-2 inline-block rounded-md bg-[#10132E]">
-          JavaScript
-        </li>
-        <li class="text-sm px-3 py-2 inline-block rounded-md bg-[#10132E]">
-          TypeScript
-        </li>
-        <li class="text-sm px-3 py-2 inline-block rounded-md bg-[#10132E]">
-          React JS
-        </li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">
-          React Native
-        </li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">
-          Tailwind CSS
-        </li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">Sass</li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">
-          Next.js
-        </li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">GSAP</li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">EJS</li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">
-          Debugging
-        </li>
+        <% }); %>
       </ul>
     </div>
 
@@ -59,35 +39,17 @@
         Backend Development
       </h3>
       <ul class="flex flex-wrap gap-4">
+        <% backend.forEach( skill => {%>
         <li class="text-sm border px-3 py-2 inline-block rounded-md">
-          <img src="/icons/vercelIcon.svg" alt="" />
-
-          Node.js
-        </li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">
-          Express.js
-        </li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">
-          MongoDB
-        </li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">MySQL</li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">
-          PostgreSQL
-        </li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md bg-[#10132E]">
-          <div class="flex gap-3 bg-[#10132E]">
-            <img src="/icons/graphQlIcon.svg" alt="" />
-            <span> GraphQL </span>
+          <div class="flex gap-3">
+            <img
+              src="<%= skill.backendSkillIcon %>"
+              alt=" <%= skill.backendSkillIcon %>"
+            />
+            <span> <%= skill.backendSkillName %> </span>
           </div>
         </li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">
-          RESTful APIs
-        </li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">JSON</li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">Java</li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">
-          <img src="/icons/gsapIcon.svg" alt="" /> PHP
-        </li>
+        <% }) %>
       </ul>
     </div>
 
@@ -95,31 +57,14 @@
     <div id="tools" class="w-full md:w-1/3 border rounded-md px-4 py-4">
       <h3 class="text-xl font-semibold text-center py-3">Tools</h3>
       <ul class="flex flex-wrap gap-4">
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">GitHub</li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">VSCode</li>
+        <% tool.forEach(skill => { %>
         <li class="text-sm border px-3 py-2 inline-block rounded-md">
-          ChatGPT
+          <div class="flex gap-3">
+            <img src="<%= skill.toolIcon %>" alt=" <%= skill.toolIcon %>" />
+            <span> <%= skill.toolName %> </span>
+          </div>
         </li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">
-          Firebase
-        </li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">
-          Supabase
-        </li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">
-          Postman
-        </li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">Docker</li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">Figma</li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">
-          Netlify
-        </li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">Vercel</li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">AWS</li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">Jira</li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">Git</li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">Slack</li>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">Notion</li>
+        <% }) %>
       </ul>
     </div>
   </div>

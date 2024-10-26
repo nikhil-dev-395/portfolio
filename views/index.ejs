@@ -17,7 +17,8 @@
     </div>
     <div class="my-10">
       <h3 class="text-[24px] text-[#fafafa] font-[400] font-IBM capitalize">
-        Hi, I'm nikhil, a full Stack Developer from India in Maharashtra
+        Hi, I'm <%= myName.split(" ")[0] %>, a full Stack Developer from India
+        in Maharashtra
       </h3>
     </div>
     <button
@@ -28,9 +29,7 @@
   </div>
 </section>
 <!-- this is about page-->
-<%- include("about.ejs") %>
-<%- include("project.ejs") %>
-<%- include("skills.ejs") %>
-<%- include("cantact.ejs") %>
+<%- include("about.ejs") %> <%- include("project.ejs") %> <%-
+include("skills.ejs") %> <%- include("cantact.ejs") %>
 <!-- following import is footer -->
 <%- include("partials/footer.ejs") %>

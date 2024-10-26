@@ -1,11 +1,50 @@
 const express = require("express");
 const router = express.Router();
+const WhatAreDoingNow = require("../models/currentDoing.models.js");
+const UserInfo = require("../models/userInfo.models.js");
+const frontendSkill = require("../models/frontendSkills.models.js");
+const backendSkill = require("../models/backendSkill.models.js");
+const tools = require("../models/tools.models.js");
 
-router.get("/",(req,res)=>{
-    res.render("index")
-})
+router.get("/", async (req, res) => {
+  try {
+    // Fetch `whatAreDoingNowDays` field
+    const activity = await WhatAreDoingNow.findOne({}, "whatAreDoingNowDays");
 
-router.get("/about", (req, res) => {
-  res.render("about");
+        const skills = await frontendSkill.find(
+          {},
+          "frontendSkillName frontendSkillIcon"
+        );
+
+        const backend = await backendSkill.find(
+          {},
+          "backendSkillIcon backendSkillName"
+        );
+
+        const tool = await tools.find({}, "toolIcon toolName");
+        
+    // Fetch all required user information in one query
+    const user = await UserInfo.findOne(
+      {},
+      "userEmail userGithubLink userLinkedinLink userTwitterLink userName"
+    );
+
+    // Render the index view with the fetched data
+    res.render("index", {
+      whatAreDoingNowDays: activity.whatAreDoingNowDays,
+      myEmail: user.userEmail,
+      myName: user.userName,
+      myGithubLink: user.userGithubLink,
+      myLinkedinLink: user.userLinkedinLink,
+      myTwitterLink: user.userTwitterLink,
+      skills,
+      backend,
+      tool,
+    });
+  } catch (err) {
+    console.error("Error retrieving data:", err);
+    res.status(500).send("Internal Server Error");
+  }
 });
+
 module.exports = { webRouter: router };
