@@ -1,0 +1,36 @@
+<%- include("partials/header.ejs") %>
+
+<section class="w-full h-screen flex flex-col items-center">
+  <div class="w-full h-screen flex flex-col items-center">
+    <p
+      class="uppercase tracking-widest text-xs text-blue-100 max-w-[40%] text-center mb-6 leading-[84px]"
+    >
+      Interactive Web Wonders with the
+      <span class="text-purple-300">MERN Stack</span>
+    </p>
+
+    <div class="text-center text-[60px] md:text-5xl lg:text-6xl w-[60%]">
+      <h2 class="dark:text-white text-black font-bold">
+        Turning Ideas into
+        <span class="text-purple-300">Effortless Interactions</span>
+      </h2>
+    </div>
+    <div class="my-10">
+      <h3 class="text-[24px] text-[#fafafa] font-[400] font-IBM">
+        Hi, I'm nikhil, a full Stack Developer from India in maharashtra
+      </h3>
+    </div>
+    <button
+      class="flex items-center justify-center gap-3 border border-purple-500 px-4 py-2 rounded-md"
+    >
+      <span> see my work </span> <img src="/icons/share.svg" alt="" />
+    </button>
+  </div>
+</section>
+<!-- this is about page-->
+<%- include("about.ejs") %>
+<%- include("project.ejs") %>
+<%- include("skills.ejs") %>
+<%- include("cantact.ejs") %>
+<!-- following import is footer -->
+<%- include("partials/footer.ejs") %>
