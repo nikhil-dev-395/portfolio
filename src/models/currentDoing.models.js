@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 const whatAreDoingNowSchema = new mongoose.Schema(
   {
-    whatAreDoingNow: {
+    whatAreDoingNowDays: {
       type: String,
-      required: true,
+      required: false,
     },
 
   },

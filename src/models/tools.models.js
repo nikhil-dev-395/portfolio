@@ -3,11 +3,11 @@ const toolSchema = new mongoose.Schema(
   {
     toolName: {
       type: String,
-      required: true,
+      required: false,
     },
     toolIcon: {
       type: String,
-      required: true,
+      required: false,
     },
   },
   { timestamps: true }

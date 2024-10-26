@@ -1,13 +1,15 @@
 const mongoose = require("mongoose");
+
 const frontendSkillSchema = new mongoose.Schema(
   {
     frontendSkillName: {
       type: String,
       required: true,
+      index: true,
     },
     frontendSkillIcon: {
       type: String,
-      required: true,
+      required: false,
     },
   },
   { timestamps: true }

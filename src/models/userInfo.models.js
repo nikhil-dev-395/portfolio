@@ -7,7 +7,7 @@ const userInfoSchema = new mongoose.Schema(
     },
     userLogoIcon: {
       type: String,
-      required: true,
+      required: false,
     },
     userEmail: {
       type: String,
