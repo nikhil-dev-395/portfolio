@@ -1,29 +1,29 @@
 <!-- partials/footer.ejs -->
 
-<footer class="text-xl w-full  bg-transparent  border-t-2 border-slate-100 ">
-    <div class="text-white h-20 w-full flex items-center justify-around">
-        <h2 class="font-IBM">copyright &copy; <%= myName %></h2>
+<footer class="text-xl w-full bg-transparent border-t-2 border-slate-100">
+  <div class="text-white flex sm:text-xs  md:text-xl items-center lg:justify-around justify-between h-20 w-full px-4 md:px-10">
+    <h2 class="font-IBM lg:text-2xl text-xs">copyright &copy; <%= myName %></h2>
 
-      <div class="icons flex gap-3">
-         <a href="<%= myLinkedinLink%>">
-           <img src="/icons/linkedin.svg" alt="linkedin" class="border py-2 px-2 rounded-md text-white ">
-         </a>
-      <a href="<%= myGithubLink%>">
-          <img src="/icons/githubIcon.svg" alt="github" class="border py-2 px-2 rounded-md text-white">
+    <div class="icons flex gap-3 mt-3 md:mt-0">
+      <a href="<%= myLinkedinLink %>">
+        <img src="/icons/linkedin.svg" alt="linkedin" class="border w-9  py-2 px-2 rounded-md text-white" />
       </a>
-      </div>
-
+      <a href="<%= myGithubLink %>">
+        <img src="/icons/githubIcon.svg" alt="github" class="border w-9 py-2 px-2 rounded-md text-white" />
+      </a>
     </div>
+  </div>
 </footer>
-
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/ScrollTrigger.min.js"></script>
 
 
 <!-- script files -->
- <script src="/scripts/navigation.scripts.js"  ></script>
- <script src="/scripts/constants.scripts.js" type="module"></script>
- <script src="/scripts/main.scripts.js" type="module"></script>
+<script src="/scripts/gsapAnimation.scripts.js" type="module"></script>
+
+<script src="/scripts/navigation.scripts.js"></script>
+<script src="/scripts/constants.scripts.js" type="module"></script>
+<script src="/scripts/main.scripts.js" type="module"></script>
 
 </body>
-
 </html>

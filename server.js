@@ -122,7 +122,6 @@ app.post("/backendSkills", async (req, res) => {
 });
 
 // Route to create current activity
-
 app.post("/whatAreDoingNow", async (req, res) => {
   try {
     const { whatAreDoingNowDays } = req.body;
@@ -138,8 +137,6 @@ app.post("/whatAreDoingNow", async (req, res) => {
     return res.status(500).json({ message: "Internal server error." });
   }
 });
-
-// route for showing project info
 
 // Create a new project
 app.post("/projects", async (req, res) => {
@@ -169,7 +166,7 @@ app.post("/projects", async (req, res) => {
     return res.status(500).json({ message: "Internal server error." });
   }
 });
-
+// my current tech stack , you can update through mongo db database
 app.post("/techStack", async (req, res) => {
   try {
     const tech = req.body;

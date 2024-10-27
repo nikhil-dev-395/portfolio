@@ -1,41 +1,40 @@
-<section id="projects" class="w-full  pb-32">
-  <h2 class="text-3xl font-bold text-center ">A small section of my recent projects
-</h2>
-<div
-
-  class="w-[80%] mx-auto px-20 mt-20 flex flex-wrap gap-12 "
->
-<!-- .projectBox where project will be displayed -->
-  <div class="flex flex-wrap gap-4">
-  <% myProject.forEach(project => { %>
-    <div
-      class="projectBox border-2 border-slate-500 rounded-xl p-5 inline-block max-w-[400px]"
-      style="background-color: #000319"
-    >
-      <img src="<%= project.projectImg %>" alt="<%= project.projectName %>" class="w-full rounded-lg" />
-      <h2 class="text-xl font-semibold mt-3"><%= project.projectName %></h2>
-      <p class="max-w-full mt-2"><%= project.projectInfo %></p>
-      <!-- Tech Stack -->
-      <div id="project-icons" class="flex justify-between pt-5">
-        <div class="flex space-x-3">
-          <% project.projectTechnologyIcons.forEach(icon => { %>
-            <img src="<%= icon %>" alt="Technology Icon" class="w-6 h-6" />
-          <% }) %>
+<section id="projects" class="w-full pb-32">
+  <h2 class="text-2xl md:text-3xl font-bold text-center">
+    A small section of my recent projects
+  </h2>
+  <div class="w-full md:w-[80%] mx-auto px-4 md:px-20 mt-12 md:mt-20 flex flex-wrap gap-6 md:gap-12">
+    <!-- .projectBox where projects will be displayed -->
+    <div class="flex flex-wrap gap-6 md:gap-4 justify-center">
+      <% myProject.forEach(project => { %>
+        <div
+          class="projectBox border-2 border-slate-500 rounded-xl p-4 md:p-5 max-w-[100%] md:max-w-[400px] w-full md:w-auto"
+          style="background-color: #000319"
+        >
+          <img
+            src="<%= project.projectImg %>"
+            alt="<%= project.projectName %>"
+            class="w-full rounded-lg"
+          />
+          <h2 class="text-lg md:text-xl font-semibold mt-3">
+            <%= project.projectName %>
+          </h2>
+          <p class="max-w-full mt-2 text-sm md:text-base">
+            <%= project.projectInfo %>
+          </p>
+          <!-- Tech Stack -->
+          <div id="project-icons" class="flex justify-between pt-5 flex-wrap gap-3">
+            <div class="flex space-x-3">
+              <% project.projectTechnologyIcons.forEach(icon => { %>
+                <img src="<%= icon %>" alt="Technology Icon" class="w-5 h-5 md:w-6 md:h-6" />
+              <% }) %>
+            </div>
+            <div class="flex space-x-3">
+              <a href="<%= project.projectGithubLink %>" class="border border-purple-500 px-3 py-2 text-sm md:text-base rounded-xl">GitHub</a>
+              <a href="<%= project.projectLiveLink %>" class="border border-purple-500 px-3 py-2 text-sm md:text-base rounded-xl">Live</a>
+            </div>
+          </div>
         </div>
-        <div class="flex space-x-3">
-          <a href="<%= project.projectGithubLink %>" class="border border-purple-500 px-3 py-2 rounded-xl">GitHub</a>
-          <a href="<%= project.projectLiveLink %>" class="border border-purple-500 px-3 py-2 rounded-xl">Live</a>
-        </div>
-      </div>
+      <% }) %>
     </div>
-  <% }) %>
-</div>
-
-
-
-
-
-</div>
-
-
+  </div>
 </section>

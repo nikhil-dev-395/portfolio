@@ -1,35 +1,51 @@
 <%- include("partials/header.ejs") %>
 
-<section class="w-full h-screen flex flex-col items-center">
-  <div class="w-full h-screen flex flex-col items-center">
+<!-- views/index.ejs -->
+<section
+  class="w-full min-h-screen flex flex-col items-center px-4 md:px-8 lg:px-16"
+>
+  <div class="w-full flex flex-col items-center py-10">
     <p
-      class="uppercase tracking-widest text-xs text-blue-100 max-w-[40%] text-center mb-6 leading-[84px]"
+      id="interctiveText"
+      class="uppercase tracking-widest text-xs text-blue-100 max-w-full sm:max-w-[80%] md:max-w-[60%] lg:max-w-[40%] text-center mb-4 md:mb-6 leading-5 sm:leading-6 md:leading-[60px]"
     >
       Interactive Web Wonders with the
       <span class="text-purple-300">MERN Stack</span>
     </p>
 
-    <div class="text-center text-[60px] md:text-5xl lg:text-6xl w-[60%]">
+    <div
+      id="TurningText"
+      class="text-center text-2xl sm:text-3xl md:text-5xl lg:text-6xl w-full sm:w-[90%] md:w-[80%] lg:w-[60%] px-2 sm:px-4 md:px-0"
+    >
       <h2 class="dark:text-white text-black font-bold">
         Turning Ideas into
         <span class="text-purple-300">Effortless Interactions</span>
       </h2>
     </div>
-    <div class="my-10">
-      <h3 class="text-[24px] text-[#fafafa] font-[400] font-IBM capitalize">
-        Hi, I'm <%= myName.split(" ")[0] %>, a full Stack Developer from India
+
+    <div class="mt-6 sm:mt-20 md:mt-10 text-center">
+      <h3
+        id="introText"
+        class="text-[18px] sm:text-[10px] md:text-[24px] text-[#fafafa] font-normal font-IBM capitalize"
+      >
+        Hi, I'm <%= myName.split(" ")[0] %>, a Full Stack Developer from India
         in Maharashtra
       </h3>
     </div>
+
     <button
-      class="flex items-center justify-center gap-3 border border-purple-500 px-4 py-2 rounded-md"
+      class="flex items-center justify-center gap-2 sm:gap-3 border border-purple-500 px-4 sm:px-6 py-2 rounded-md hover:bg-purple-500 transition-all duration-200 ease-in-out text-sm md:text-base mt-6 sm:mt-16 md:mt-10"
+      style="margin-top: 90px"
     >
-      <span> see my work </span> <img src="/icons/share.svg" alt="" />
+      <span>See My Work</span>
+      <img src="/icons/share.svg" alt="See Work Icon" class="w-4 sm:w-5" />
     </button>
   </div>
 </section>
-<!-- this is about page-->
+
+<!-- Include other sections -->
 <%- include("about.ejs") %> <%- include("project.ejs") %> <%-
-include("skills.ejs") %> <%- include("cantact.ejs") %>
-<!-- following import is footer -->
+include("skills.ejs") %> <%- include("contact.ejs") %>
+
+<!-- Include footer -->
 <%- include("partials/footer.ejs") %>

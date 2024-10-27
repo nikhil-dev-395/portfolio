@@ -1,5 +1,5 @@
 <section id="skills" class="h-auto w-full py-6">
-  <h2 class="text-3xl font-bold text-center py-4">
+  <h2 class="text-2xl md:text-3xl font-bold text-center py-4">
     The Skills & Technologies are here..
   </h2>
 
@@ -7,18 +7,19 @@
     These are a few areas of expertise I can leverage in the field of
     development
   </p>
-  <div id="skill-box" class="w-[95%] mx-auto gap-x-2 flex flex-col md:flex-row">
+
+  <div id="skill-box" class="w-[95%] mx-auto flex flex-col gap-6 md:flex-row md:gap-x-4">
     <!-- Frontend Skills -->
     <div
       id="frontend-skills"
       class="w-full md:w-1/3 border rounded-xl px-4 py-4"
     >
-      <h3 class="text-xl font-semibold text-center py-5">
+      <h3 class="text-lg md:text-xl font-semibold text-center py-3">
         Frontend Development
       </h3>
-      <ul class="flex flex-wrap gap-4">
+      <ul class="flex flex-wrap gap-3 md:gap-4 justify-center md:justify-start">
         <% skills.forEach(skill => { %>
-        <li class="text-sm px-3 py-2 inline-block rounded-md border">
+        <li class="text-xs md:text-sm px-3 py-2 inline-block rounded-md border">
           <img
             src="<%= skill.frontendSkillIcon %>"
             alt="<%= skill.frontendSkillName %> icon"
@@ -35,18 +36,15 @@
       id="backend-skills"
       class="w-full md:w-1/3 border rounded-md px-4 py-4"
     >
-      <h3 class="text-xl font-semibold text-center py-3">
+      <h3 class="text-lg md:text-xl font-semibold text-center py-3">
         Backend Development
       </h3>
-      <ul class="flex flex-wrap gap-4">
-        <% backend.forEach( skill => {%>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">
-          <div class="flex gap-3">
-            <img
-              src="<%= skill.backendSkillIcon %>"
-              alt=" <%= skill.backendSkillIcon %>"
-            />
-            <span> <%= skill.backendSkillName %> </span>
+      <ul class="flex flex-wrap gap-3 md:gap-4 justify-center md:justify-start">
+        <% backend.forEach(skill => { %>
+        <li class="text-xs md:text-sm border px-3 py-2 inline-block rounded-md">
+          <div class="flex items-center gap-2">
+            <img src="<%= skill.backendSkillIcon %>" alt="<%= skill.backendSkillIcon %>" class="w-4 h-4"/>
+            <span><%= skill.backendSkillName %></span>
           </div>
         </li>
         <% }) %>
@@ -55,13 +53,13 @@
 
     <!-- Tools -->
     <div id="tools" class="w-full md:w-1/3 border rounded-md px-4 py-4">
-      <h3 class="text-xl font-semibold text-center py-3">Tools</h3>
-      <ul class="flex flex-wrap gap-4">
+      <h3 class="text-lg md:text-xl font-semibold text-center py-3">Tools</h3>
+      <ul class="flex flex-wrap gap-3 md:gap-4 justify-center md:justify-start">
         <% tool.forEach(skill => { %>
-        <li class="text-sm border px-3 py-2 inline-block rounded-md">
-          <div class="flex gap-3">
-            <img src="<%= skill.toolIcon %>" alt=" <%= skill.toolIcon %>" />
-            <span> <%= skill.toolName %> </span>
+        <li class="text-xs md:text-sm border px-3 py-2 inline-block rounded-md">
+          <div class="flex items-center gap-2">
+            <img src="<%= skill.toolIcon %>" alt="<%= skill.toolIcon %>" class="w-4 h-4"/>
+            <span><%= skill.toolName %></span>
           </div>
         </li>
         <% }) %>
