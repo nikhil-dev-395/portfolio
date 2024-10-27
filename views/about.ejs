@@ -27,8 +27,8 @@
         <!-- Right Bottom Content -->
         <div
           id="rightop2"
-          class="p-6 rounded-3xl border  flex items-center space-x-6 "
-          style="background-color: #000319;"
+          class="p-6 rounded-3xl border flex items-center space-x-6"
+          style="background-color: #000319"
         >
           <div class="details">
             <p class="text-sm text-slate-200">I constantly try to improve</p>
@@ -37,26 +37,19 @@
             </h3>
           </div>
           <div id="tech-stack" class="grid grid-cols-2 gap-1 text-center">
-            <span
-              class="inline-block bg-slate-500 px-3 py-1 rounded-full text-white text-sm"
-              >Node.js</span
+
+            <% myTechStack.forEach(tech=>{ %>
+
+                <span
+              class="inline-block border px-3 py-1 rounded-full text-white text-sm"
             >
-            <span
-              class="inline-block bg-slate-500 px-3 py-1 rounded-full text-white text-sm"
-              >JavaScript</span
-            >
-            <span
-              class="inline-block bg-slate-700 px-3 py-1 rounded-full text-white text-sm"
-              >Express.js</span
-            >
-            <span
-              class="inline-block bg-slate-500 px-3 py-1 rounded-full text-white text-sm"
-              >MongoDB</span
-            >
-            <span
-              class="inline-block bg-slate-500 px-3 py-1 rounded-full text-white text-sm"
-              >React</span
-            >
+              <div class="flex gap-2">
+                <img src="<%= tech.techIcon %>" alt="<%= tech.techIcon %>" /> <%= tech.techName %>
+              </div>
+            </span>
+
+              <% }) %>
+
           </div>
         </div>
       </div>
@@ -71,7 +64,7 @@
       <!-- Right Section -->
       <div id="rightinfo2" class="flex flex-col justify-center space-y-4">
         <!-- Right Top Content -->
-        <div id="rightop12" class="mb-4 rounded-3xl border p-6 ">
+        <div id="rightop12" class="mb-4 rounded-3xl border p-6">
           <p class="text-2xl font-bold text-left mb-3 ml-3 max-w-80 text-white">
             Tech enthusiast with a drive for innovation
           </p>
@@ -105,9 +98,7 @@
         class="flex items-end justify-start rounded-3xl h-full bg-gradient-to-r from-gray-700 via-gray-800 to-gray-900 p-6"
       >
         <p class="text-2xl font-bold text-left mb-7 ml-3 max-w-80 text-white">
-                <%= whatAreDoingNowDays %>
-                <%= myEmail %>
-                <%= myGithubLink %> <%= myName %>
+          <%= whatAreDoingNowDays %>
 
           <!--here add your current working  -->
         </p>

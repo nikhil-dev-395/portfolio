@@ -14,6 +14,7 @@ const tools = require("./src/models/tools.models.js");
 const backendSkill = require("./src/models/backendSkill.models.js");
 const frontendSkill = require("./src/models/frontendSkills.models.js");
 const project = require("./src/models/project.models.js");
+const techStack = require("./src/models/techStack.models.js");
 const port = process.env.PORT || 4909;
 app.use(express.json());
 app.use(cors());
@@ -169,78 +170,16 @@ app.post("/projects", async (req, res) => {
   }
 });
 
-app.get("/userInfo", async (req, res) => {
+app.post("/techStack", async (req, res) => {
   try {
-    // const { userEmail } = req.body;
-
-    const showUserInfo = await userInfo.find();
-    return res.json({ showUserInfo });
+    const tech = req.body;
+    const stack = await techStack.insertMany(tech); // Insert each item as a separate document
+    return res.send({ stack });
   } catch (error) {
     console.log(error);
-  }
-});
-
-app.get("/tools", async (req, res) => {
-  try {
-    // Use insertMany to create multiple tools at once
-    const createTools = await tools.find({});
-
-    // Return the created tools with a success response
-    return res.status(201).json({ createTools });
-  } catch (error) {
-    console.error(error); // Log the error for debugging
-    return res.status(500).json({ message: "Internal server error." }); // Return a 500 error
-  }
-});
-
-// Route to insert multiple frontend skills
-app.get("/frontendSkills", async (req, res) => {
-  try {
-    // Use insertMany to create multiple skills at once
-    const findFrontendSkills = await frontendSkill.find();
-    // Return the created skills
-    return res.status(201).json({ findFrontendSkills });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ message: "Internal server error." });
-  }
-});
-
-app.get("/backendSkills", async (req, res) => {
-  try {
-    // Use insertMany to create multiple skills at once
-    const showSkills = await backendSkill.find();
-
-    // Return the created skills
-    return res.status(201).json({ showSkills });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ message: "Internal server error." });
-  }
-});
-
-// Route to create current activity
-
-app.get("/whatAreDoingNow", async (req, res) => {
-  try {
-    const findDo = await whatAreDoingNow.find({});
-    return res.status(201).json({ findDo });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ message: "Internal server error." });
-  }
-});
-
-// route for showing project info
-
-// Create a new project
-app.get("/projects", async (req, res) => {
-  try {
-    const savedProject = await project.find();
-    return res.status(201).json({ savedProject });
-  } catch (error) {
-    console.error(error);
-    return res.status(500).json({ message: "Internal server error." });
+    res
+      .status(500)
+      .send({ error: "An error occurred while adding tech stack" });
   }
 });
 
