@@ -36,10 +36,22 @@ gsap.from("#about", {
   y: -30,
   opacity: 0,
   duration: 0.4,
-  delay: 0.5, // Added delay specifically for #about
+  delay: 0.6, // Added delay specifically for #about
   scrollTrigger: {
     trigger: "#about",
-    start: "top 75%", // Trigger when the top of the #about section reaches 75% of the viewport
+    start: "top 85%", // Trigger when the top of the #about section reaches 75% of the viewport
+  },
+});
+
+// Animate box1
+gsap.from("#aboutHeader", {
+  y: 30,
+  opacity: 0,
+  duration: 0.4,
+  delay: 0.6,
+  scrollTrigger: {
+    trigger: "#box1",
+    start: "top 70%", // Trigger when the top of the #box1 section reaches 70% of the viewport
   },
 });
 
@@ -48,6 +60,7 @@ gsap.from("#box1", {
   y: 30,
   opacity: 0,
   duration: 0.4,
+  delay: 0.4,
   scrollTrigger: {
     trigger: "#box1",
     start: "top 70%", // Trigger when the top of the #box1 section reaches 70% of the viewport
@@ -59,6 +72,7 @@ gsap.from("#box2", {
   y: 30,
   opacity: 0,
   duration: 0.4,
+  delay: 0.6,
   scrollTrigger: {
     trigger: "#box2",
     start: "top 70%", // Trigger when the top of the #box2 section reaches 70% of the viewport

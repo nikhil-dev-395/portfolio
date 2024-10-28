@@ -1,4 +1,7 @@
-<section id="about" class="w-full h-auto pt-1 pb-12">
+<section id="about" class="w-full h-auto mt-24 md:mt-1 lg:mt-1 pb-12">
+  <h2 class="text-2xl md:text-3xl py-8 font-bold text-center" id="aboutHeader">
+    A glimpse into my journey and passion for web development.
+  </h2>
   <div class="w-full h-auto space-y-10" id="box-container">
     <!-- First Box -->
     <div
@@ -48,10 +51,8 @@
 
           <div
             id="tech-stack"
-            class=" flex flex-wrap gap-2 text-center mt-4 md:mt-0 w-full"
+            class="flex flex-wrap gap-2 text-center mt-4 md:mt-0 w-full"
           >
-
-
             <% myTechStack.forEach(tech => { %>
             <li
               class="text-xs md:text-sm border px-3 py-2 inline-block rounded-md"
@@ -103,7 +104,8 @@
 
             <div
               id="copy-email"
-              class="inline-block gap-3 border border-purple-500 py-2 px-5 rounded-md"
+              data-email="<%= myEmail %>"
+              class="inline-block gap-3 border border-purple-500 py-2 px-5 rounded-md cursor-pointer hover:rounded-2xl hover:text-blue-700"
             >
               <div class="flex px-3 py-2 items-center">
                 <img src="/icons/copy.svg" alt="copy icon" class="w-4 h-4" />
